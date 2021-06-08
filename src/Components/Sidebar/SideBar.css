@@ -1,0 +1,171 @@
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: #b6b6b6;
+    --text-secondary: #ffeeee;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+  }
+
+.sidebar{
+    position: fixed;
+    background-color: rgb(26, 25, 25);
+    transition: width 300ms ease;
+}
+
+
+
+
+.sidebar__logo {
+    font-weight: bold;
+    border-bottom: 1px solid rgb(77, 77, 77);
+    text-align: center;
+    background: var(--bg-secondary);
+    font-size: 1rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+    cursor: pointer;
+  }
+
+
+.logo__text{
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: width 300ms ease;
+}
+
+.sidebar__nav{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar__item{
+    width: 100%;
+    cursor: pointer;
+}
+
+.sidebar__item:last-child{
+    margin-top: 10rem;
+}
+
+
+
+.sidebar__link:hover {
+    filter: grayscale(0%) opacity(1);
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.sidebar__link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: grey;
+    text-decoration: none;
+    transition: 200ms;
+}
+
+.link__text{
+    display: none;
+    margin-left: 1rem;
+}
+
+.sidebar__icon{
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+
+
+.sidebar:hover .link__text{
+    display: block;
+}
+
+.sidebar__item:hover{
+    font-size: larger;
+}
+
+.sidebar__item:hover .sidebar__icon{
+    color: rgb(0, 255, 0);
+}
+
+@media only screen and (max-width: 800px){
+    .sidebar{
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+        border-top: 1px solid rgb(54, 54, 54);
+    }
+
+    .sidebar__logo{
+        display: none;
+    }
+
+    .sidebar__nav{
+        flex-direction: row;
+    }
+
+    .sidebar__link{
+        justify-content: center;
+    }
+
+    .sidebar:hover .link__text{
+        display: none;
+    }
+
+    .sidebar__item:last-child{
+        margin-top: 0rem;
+    }
+    
+}
+
+@media only screen and (min-width: 800px){
+
+
+    .sidebar{
+        top:80px;
+        width: 5rem;
+        height: 100vh;
+        border-right: 1px solid rgb(46, 46, 46);
+    }
+
+    .sidebar:hover{
+        width: 16rem;
+    }
+
+    .sidebar:hover .link__text {
+        display: inline;
+    }
+
+    .sidebar:hover .logo{
+        margin-left: 12rem;
+    }
+
+    .sidebar:hover .logo__text
+    {
+        left: 0px;
+        transition: width 300ms;
+    } 
+
+    .sidebar:hover{
+        width: 16rem;
+    }
+
+
+    .logo {
+        margin-left: 1rem;
+        transform: rotate(0deg);
+        transition: 300ms;
+        color: transparent;
+    }
+    
+    .sidebar:hover .logo{
+        transform: rotate(-360deg);
+    }
+}

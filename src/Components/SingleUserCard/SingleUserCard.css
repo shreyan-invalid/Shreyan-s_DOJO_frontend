@@ -1,0 +1,66 @@
+.user__card{
+    background-color: rgb(59, 59, 59);
+    padding: 30px;
+    width: 40%;
+    display: flex;
+    margin: 10px;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: all 0.1s ease-in;
+    border: 1px solid gray;
+    margin-bottom: 20px;
+}
+
+.user__card:hover{
+    padding: 40px;
+    transition: all 0.1s ease-out;
+    box-shadow: 0 5px 70px rgb(34, 34, 34),
+    0 15px 70px rgb(68, 68, 68);
+}
+
+.user__image > img{
+    height: 100px;
+    width: 100px;
+    border-radius: 100px;
+    margin: 10px;
+}
+
+
+
+.user__appeal{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.user__appeal > li{
+    padding: 10px;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.user__follow{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user__follow > h3{
+    margin-right: 10px;
+}
+
+
+
+
+@media only screen and (max-width: 1200px){
+    .user__card{
+        width: 55%;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .user__card{
+        width: 90%;
+    }
+}

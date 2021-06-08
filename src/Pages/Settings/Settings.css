@@ -1,0 +1,70 @@
+.settings__edit__imageURL{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(48, 48, 48);
+    width: 50%;
+    margin-top: 80px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid gray;
+    transition: all 0.1s ease-in;
+}
+
+.settings__edit__imageURL > img{
+    height: 200px;
+    border-radius: 300px;
+    width: 200px;
+}
+
+.settings__edit__bio{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(48, 48, 48);
+    padding: 20px;
+    width: auto;
+    border-radius: 20px;
+    border: 1px solid gray;
+    transition: all 0.1s ease-in;
+}
+
+.settings__edit__bio:hover , .settings__edit__imageURL:hover{
+    padding: 25px;
+    transition: all 0.1s ease-out;
+}
+
+.settings__edit__bio > input{
+    padding: 2px 35px 89px 55px;
+    
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.settings__edit__imageURL > button, .settings__edit__bio > button{
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.1s ease-in;
+}
+
+.settings__edit__imageURL > button:hover, .settings__edit__bio > button:hover{
+    padding: 10px;
+    background-color: rgb(0, 221, 0);
+    color: white;
+    transition: all 0.1s ease-out;
+}
+
+@media only screen and (max-width: 800px){
+    .settings__edit__imageURL{
+        width: 70%;
+    }
+}

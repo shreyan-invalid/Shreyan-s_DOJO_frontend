@@ -1,0 +1,46 @@
+.springModal_button{
+    background-color: transparent;
+    border: transparent;
+    font-size: 20px;
+    color: rgb(151, 151, 151);
+    transition: all 0.1s ease-in;
+}
+
+.springModal_button:hover{
+    color: rgb(255, 36, 36);
+    transition: all 0.1s ease-in;
+}
+
+.delete_modal{
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgb(66, 66, 66);
+    color: white;
+}
+
+.modal_button_red:hover{
+    background-color: red;
+}
+
+.modal_button{
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    transition: all 0.1s ease-in;
+    border: none
+}
+
+.modal_button_gray:hover{
+    background-color: rgb(97, 97, 97);
+}
+
+.modal_button:hover{
+    transition: all 0.1s ease-in;
+    padding: 13px;
+}

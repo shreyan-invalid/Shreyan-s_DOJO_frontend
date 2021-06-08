@@ -1,0 +1,95 @@
+.signup{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    flex: 0.6;
+    flex-direction: column;
+}
+
+.signup__container{
+    background-color: rgb(46, 46, 46);;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 80%;
+    border-radius: 30px;
+    border: 1px solid rgb(97, 97, 97);
+}
+
+.signup__container:hover{
+    padding: 2.3rem 1rem;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(112, 112, 112, 0.5);
+}
+
+.signup__logo{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.signup__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+}
+
+.signup__form > h5{
+    font-size: 15px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.signup__form > input{
+    padding: 8px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+}
+
+.signup__form > button{
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+}
+
+.signup__form > button:hover{
+    padding: 20px;
+    font-size: larger;
+    transition: all 0.1s ease-in-out;
+}
+
+.errors{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 50%;
+    border-radius: 10px;
+    border: 2px solid red;
+    background-color: pink;
+}
+
+
+@media only screen and (max-width: 900px){
+    .signup{
+        width: 60%;
+        margin-bottom: 30px;
+    }
+    .signup__container{
+        width: 100%;
+        padding: 1rem;
+    }
+
+    
+}

@@ -1,0 +1,21 @@
+.likebuttongreen{ background-color: transparent;
+    border: transparent;
+    font-size: 19px;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+    color: rgb(0, 255, 0);
+}
+
+.liked_button{
+    background-color: transparent;
+    border: transparent;
+    font-size: 19px;
+    transition: all 0.1s ease-in;
+    cursor: pointer;
+    color: rgb(167, 167, 167);
+}
+
+.liked_button:hover, .likebuttongreen:hover{
+    font-size: 21px;
+    transition: all 0.1s ease-out;
+}
