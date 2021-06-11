@@ -5,7 +5,7 @@ import {useSelector} from 'react-redux';
 import {selectUser} from '../../Redux/Slices/UserSlice';
 import {selectUserPosts} from '../../Redux/Slices/PostsSlice';
 import {Avatar} from '@material-ui/core';
-
+import default_user from '../../images/default_user.jpg'
 
 
 const UserInfo = ({user}) => {
@@ -19,7 +19,7 @@ const UserInfo = ({user}) => {
             <div className="userinfo">
                 <div className="userinfo__image">
                     
-                    <img className="userinfo__imageIcon" src={user.imageURL}/>
+                    <img className="userinfo__imageIcon" src={user.imageURL.trim()!=="default"? user.imageURL: default_user} alt={user.username}/>
                 </div>
                 <div className="userinfo__social">
                     <div className="userinfo__item">

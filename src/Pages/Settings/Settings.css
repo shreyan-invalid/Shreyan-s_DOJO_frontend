@@ -38,7 +38,6 @@
 
 .settings__edit__bio > input{
     padding: 2px 35px 89px 55px;
-    
     margin: 10px;
     border-radius: 5px;
     border: none;
@@ -49,14 +48,23 @@
     flex-wrap: wrap;
 }
 
-.settings__edit__imageURL > button, .settings__edit__bio > button{
+.settings_submit_button{
     padding: 5px;
     border: none;
     border-radius: 6px;
     transition: all 0.1s ease-in;
 }
 
-.settings__edit__imageURL > button:hover, .settings__edit__bio > button:hover{
+.settings_submit_loading{
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: gray;
+}
+
+
+
+.settings_submit_button:hover{
     padding: 10px;
     background-color: rgb(0, 221, 0);
     color: white;

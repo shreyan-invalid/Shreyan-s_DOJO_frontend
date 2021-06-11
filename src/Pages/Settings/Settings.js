@@ -7,8 +7,7 @@ import {UPDATE_BIO, UPDATE_PROFILE_PIC} from '../../GraphqlQueries/Mutations';
 import {FETCH_POSTS_QUERY} from '../../GraphqlQueries/Fetch';
 import {useMutation} from '@apollo/client'; 
 import {storage} from '../../Firebase';
-
-
+import default_user from '../../images/default_user.jpg';
 
 
 
@@ -20,6 +19,7 @@ function Settings() {
     const [imageURL, setImageURL]= useState(null);
     const [bio, setBioUpdate]= useState("");
     const [loading, setLoading]= useState(false);
+    const [loadingBio, setLoadingBio]= useState(false);
     const [bioOption, setBioOption]= useState("update");
     const dispatch= useDispatch();
 
@@ -107,6 +107,7 @@ function Settings() {
             dispatch(setUser({user: updatedUser}));
             const finalUser = JSON.stringify(updatedUser);
             localStorage.setItem("user", finalUser);
+            
         },
         onCompleted(){
             setLoading(false);
@@ -161,17 +162,17 @@ function Settings() {
             <SideBar/>
             <div className="feed">
                 <form className="settings__edit__imageURL">
-                    <img src={currUser.imageURL}/>
+                    <img src={currUser.imageURL.trim()!=="default"? currUser.imageURL : default_user} alt={currUser.username}/>
                     <h3>Change Profile Picture</h3>
                     <input type="file" onChange={(e) => setImage(e.target.files[0])}/>
-                    <button disabled={loading && true} onClick={handleUpload}>{loading? "loading..." : "Upload"}</button>
+                    <button className={loading? "settings_submit_loading": "settings_submit_button"} disabled={loading && true} onClick={handleUpload}>{loading? "loading..." : "Upload"}</button>
                 </form>
 
                 <form className="settings__edit__bio">
                     <p>About : {currUser.bio.trim()=== "" ? "Nothing to show! Update bio now": currUser.bio}</p>
                     <h3>About youself!</h3>
                     <input type="text" placeholder="Write about yourself" value={bio} onChange={(e)=> setBioUpdate(e.target.value)}/>
-                    <button  onClick={handleBioUpload}>{bioOption}</button>
+                    <button className={loading? "settings_submit_loading": "settings_submit_button"} disabled={loading && true}  onClick={handleBioUpload}>{bioOption}</button>
                 </form>
             </div>
         </div>

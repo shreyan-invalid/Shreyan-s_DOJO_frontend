@@ -5,10 +5,11 @@ import {store} from './Redux/Store';
 import {Provider} from 'react-redux';
 import {setContext} from 'apollo-link-context';
 import {createUploadLink} from 'apollo-upload-client';
+import backendURL from './config';
 
 
 const httpLink= createUploadLink({
-    uri: "https://enigmatic-atoll-80912.herokuapp.com/graphql"
+    uri: backendURL
 })
 
 const authLink = setContext(() => {

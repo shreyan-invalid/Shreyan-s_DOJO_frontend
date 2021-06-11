@@ -10,6 +10,7 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import {useSelector} from 'react-redux';
 import {selectUser} from '../../Redux/Slices/UserSlice';
 import {Link} from 'react-router-dom';
+import default_user from '../../images/default_user.jpg'
 
 const SideBar = () => {
 
@@ -22,7 +23,7 @@ const SideBar = () => {
                     <li className="sidebar__logo">
                         <Link to="/profile" className="sidebar__link">
     
-                            {user.imageURL? <Avatar src={user.imageURL} alt="https://www.wired.com/wp-content/uploads/2016/03/MIT-Web-Loading.jpg" className="logo"/>: <h3 style={{color: "white"}}>Loading...</h3>}
+                            {user.imageURL? <Avatar src={user.imageURL.trim() !== "default"? user.imageURL: default_user}  className="logo"/>: <h3 style={{color: "white"}}>Loading...</h3>}
                             <p className="link__text logo__text">{user.username}</p>
     
                         </Link>

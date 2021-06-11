@@ -8,7 +8,7 @@ import LikeButton from '../LikeButton/LikeButton';
 import SpringModal from '../Modal/SpringModal';
 import {CREATE_COMMENT} from '../../GraphqlQueries/Mutations';
 import { useMutation } from "@apollo/client";
-
+import default_pic from '../../images/default_user.jpg'
 
 
 
@@ -76,7 +76,7 @@ const Post = ({postId, image, username, timestamp, caption, likes, likeCount, co
     return (
         <div className="post">
             <div className="post__top">
-                <img src={profilePic && profilePic.imageURL} alt=""/>
+                <img src={profilePic.imageURL.trim()!== "default"? profilePic.imageURL: default_pic} alt={username} />
                 <div className="top__info">
                     <h3>{username}</h3>
                     <p>{timestamp}</p>

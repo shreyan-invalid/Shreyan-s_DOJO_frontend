@@ -6,6 +6,7 @@ import {selectUser} from '../../Redux/Slices/UserSlice';
 import {FOLLOW_USER} from '../../GraphqlQueries/Mutations';
 import React, {useEffect, useState}  from 'react';
 import FollowUserButton from '../FollowUserButton/FollowUserButton';
+import default_user from '../../images/default_user.jpg'
 
 function SingleUserCard({userId, username, userPhoto, followers, followings, followersList}) {
 
@@ -17,7 +18,7 @@ function SingleUserCard({userId, username, userPhoto, followers, followings, fol
     return (
         <div className="user__card">
             <div className="user__image">
-                <img src={userPhoto}/>
+                <img src={userPhoto.trim()!== "default"? userPhoto : default_user}/>
             </div>
 
             <div className="user__info">

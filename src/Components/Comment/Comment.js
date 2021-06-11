@@ -5,7 +5,7 @@ import {useQuery} from '@apollo/client';
 import SpringModal from '../../Components/Modal/SpringModal';
 import {selectUser} from '../../Redux/Slices/UserSlice';
 import {useSelector} from 'react-redux';
-
+import default_pic from '../../images/default_user.jpg'
 
 
 const Comment = ({comment, postId, uid, username, postUsername}) => {
@@ -30,7 +30,7 @@ const Comment = ({comment, postId, uid, username, postUsername}) => {
     return (
         <div className="comment">
          <div className="comment__image">
-             <img src={data && data.getProfilePic}/>
+             <img src={data && data.getProfilePic.trim() !== "default"? data.getProfilePic: default_pic} alt={postUsername}/>
          </div>
          
          <p><span>{username} </span>{comment}</p>

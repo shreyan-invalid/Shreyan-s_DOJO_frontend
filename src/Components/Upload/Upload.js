@@ -7,7 +7,7 @@ import gql from 'graphql-tag';
 import {useMutation} from '@apollo/client';
 import {storage} from '../../Firebase';
 import {Avatar} from '@material-ui/core';
-
+import default_user from '../../images/default_user.jpg'
 
 
 
@@ -24,7 +24,9 @@ const Upload = () => {
     const handleChange = (e) => {
         if(e.target.files[0]){
             setImage(e.target.files[0]);
-        }
+            
+        }        
+        console.log(image);
     }
 
     const handleUpload = (e) => {
@@ -111,7 +113,7 @@ const Upload = () => {
     return (
         <form onSubmit={handleUpload} className="upload">
             <div className="upload__info">
-                <img  src={user.imageURL}/>
+                <img  src={user.imageURL.trim()!=="default"? user.imageURL : default_user} alt={user.username}/>
                 <input  onChange={(e) => setCaption(e.target.value)} value={caption} type="text" placeholder="Write a caption!"/>
             </div>
             <div className="upload__file">
